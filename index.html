@@ -25,6 +25,26 @@
       <h2 class="page-titles"> Home </h2>
         <p> Digital collection of my things </p>
     </article>
+
+    <p><a href="https://www.chess.com/member/coleguidrey" target="_blank">@coleguidrey</a>
+    Chess.com Rapid Rating: <span id="rapid-rating">Loading...</span></p>
+    <p>"The ability to play chess is the sign of a gentleman. The ability to play chess well is the sign of a wasted life." -Paul Murphy</p>
+
+    <script>
+        const username = "coleguidrey";  // Replace with your Chess.com username
+        const apiUrl = `https://api.chess.com/pub/player/${username}/stats`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const rapidRating = data.chess_rapid?.last?.rating || 'N/A';
+                document.getElementById('rapid-rating').textContent = rapidRating;
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                document.getElementById('rapid-rating').textContent = 'Error fetching data';
+            });
+    </script>
   
     <script src="script.js">
     </script>
