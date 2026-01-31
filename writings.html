@@ -1,38 +1,40 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>cole guidrey</title>
-  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cole Guidrey's writings and essays">
+  <title>Writings - Cole Guidrey</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-
 <body>
-  <header> cole guidrey </header>
-  <section>
-    <aside>
-      <nav class="vertical-menu"> 
-        <ol>
-          <a href="../index.html">home</a>
-          <a href="writings.html">writings</a>
-          <a href="portfolio.html">portfolio</a>
-          <a href="about.html">me</a> 
-        </ol>
-      </nav>
-    </aside>
-    <article>
-      <h2 class="page-titles"> Writings </h2>
-        <p> Here are some essays</p>
-    </article>
+  <header>
+    <h1>Cole Guidrey</h1>
+  </header>
 
-    <script src="script.js">
-    </script>
+  <div class="container">
+    <nav>
+      <ol>
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="writings.html" class="active">writings</a></li>
+        <li><a href="portfolio.html">portfolio</a></li>
+        <li><a href="chess.html">chess</a></li>
+      </ol>
+    </nav>
 
     <main>
-      <a href="/essays/tesla.html">Tesla</a>
-    </main>
-  </section>
-</body>
+      <h2>Writings</h2>
+      <p class="text-secondary">Essays, thoughts, and observations.</p>
 
+      <ul class="essay-list">
+        <li>
+          <a href="essays/tesla.html">Tesla</a>
+        </li>
+      </ul>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>

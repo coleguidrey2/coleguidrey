@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chess.com Rapid Rating</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cole Guidrey's chess statistics and games">
+  <title>Chess - Cole Guidrey</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <h1>Chess.com Rapid Rating for <span id="username">magnuscarlsen</span></h1>
-    <p>Rapid Rating: <span id="rapid-rating">Loading...</span></p>
+  <header>
+    <h1>Cole Guidrey</h1>
+  </header>
 
-    <script>
-        const username = "coleguidrey";  // Replace with your Chess.com username
-        const apiUrl = `https://api.chess.com/pub/player/${username}/stats`;
+  <div class="container">
+    <nav>
+      <ol>
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="writings.html">writings</a></li>
+        <li><a href="portfolio.html">portfolio</a></li>
+        <li><a href="chess.html" class="active">chess</a></li>
+      </ol>
+    </nav>
 
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const rapidRating = data.chess_rapid?.last?.rating || 'N/A';
-                document.getElementById('rapid-rating').textContent = rapidRating;
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-                document.getElementById('rapid-rating').textContent = 'Error fetching data';
-            });
-    </script>
+    <main>
+      <h2>Chess</h2>
+
+      <div class="chess-info">
+        <h3>Chess.com Profile</h3>
+        <p>
+          <a href="https://www.chess.com/member/coleguidrey" target="_blank" rel="noopener noreferrer">@coleguidrey</a>
+        </p>
+        <p>
+          <strong>Rapid Rating:</strong> <span id="rapid-rating" class="rating-value">Loading...</span>
+        </p>
+      </div>
+
+      <div class="quote">
+        "The ability to play chess is the sign of a gentleman. The ability to play chess well is the sign of a wasted life." — Paul Morphy
+      </div>
+
+      <div class="section">
+        <h3 class="section-title">About My Chess Journey</h3>
+        <p>
+          Chess has been a lifelong passion, combining strategic thinking with competitive spirit.
+          I regularly play rapid games on Chess.com and continue to study classic games and modern theory.
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
