@@ -3,49 +3,61 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cole Guidrey - Personal website and digital collection">
+  <meta name="description" content="Cole Guidrey">
   <title>Cole Guidrey</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-  <header>
-    <h1>Cole Guidrey</h1>
-  </header>
+  <div class="site-title"><a href="index.html">Cole Guidrey</a></div>
+  <nav>
+    <a href="index.html" class="active">home</a>
+    <a href="about.html">about</a>
+    <a href="writings.html">writings</a>
+    <a href="chess.html">chess</a>
+    <a href="resume.html">resume</a>
+  </nav>
 
-  <div class="container">
-    <nav>
-      <ol>
-        <li><a href="index.html" class="active">home</a></li>
-        <li><a href="about.html">about</a></li>
-        <li><a href="writings.html">writings</a></li>
-        <li><a href="portfolio.html">portfolio</a></li>
-        <li><a href="chess.html">chess</a></li>
-        <li><a href="resume.html">resume</a></li>
-      </ol>
-    </nav>
+  <p>Economics student at the University of Pittsburgh.</p>
 
-    <main>
-      <h2>Welcome</h2>
-      <p>Digital collection of my work, thoughts, and interests.</p>
+  <h2>Essays</h2>
+  <ul>
+    <li><a href="essays/Games.html">Good Games</a> <span class="muted small">— Mar 2026</span></li>
+    <li><a href="essays/tesla.html">Tesla</a></li>
+  </ul>
 
-      <div class="chess-info">
-        <p>
-          <a href="https://www.chess.com/member/coleguidrey" target="_blank" rel="noopener noreferrer">@coleguidrey</a> on Chess.com
-        </p>
-        <p>
-          Rapid Rating: <span id="rapid-rating" class="rating-value">Loading...</span>
-        </p>
-        <p class="quote">
-          "The ability to play chess is the sign of a gentleman. The ability to play chess well is the sign of a wasted life." — Paul Morphy
-        </p>
+  <h2>Chess</h2>
+  <p>
+    Rapid: <strong><span id="rapid-rating">Loading...</span></strong>
+    &nbsp;·&nbsp;
+    <a href="https://www.chess.com/member/coleguidrey" target="_blank" rel="noopener">@coleguidrey</a>
+  </p>
+
+  <div id="rating-meter" style="display:none">
+    <div class="meter-bar-wrapper">
+      <div class="meter-marker" id="meter-marker">
+        <div class="meter-marker-label" id="meter-marker-label"></div>
+        <div class="meter-marker-line"></div>
+        <div class="meter-marker-arrow"></div>
       </div>
-
-      <div class="section">
-        <h3 class="section-title">Recent Updates</h3>
-        <p>Explore my writings, portfolio, and chess statistics using the navigation menu.</p>
-      </div>
-    </main>
+    </div>
+    <div class="meter-ticks">
+      <span style="left:0%">400</span>
+      <span style="left:20%">800</span>
+      <span style="left:40%">1200</span>
+      <span style="left:60%">1600</span>
+      <span style="left:80%">2000</span>
+      <span style="left:100%">2400</span>
+    </div>
+    <div class="meter-tiers">
+      <span style="left:0%;width:30%">Gentleman</span>
+      <span style="left:30%;width:70%">Wasted Life</span>
+    </div>
   </div>
+
+  <p class="small muted">"The ability to play chess is the sign of a gentleman. The ability to play chess well is the sign of a wasted life." — Paul Morphy</p>
+
+  <h2>Resume</h2>
+  <p><a href="Cole%20Guidrey's%20Resume.pdf" download="Cole Guidrey Resume.pdf">Download PDF</a></p>
 
   <script src="script.js"></script>
 </body>

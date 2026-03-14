@@ -4,53 +4,33 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="About Cole Guidrey">
-  <title>About - Cole Guidrey</title>
+  <title>About — Cole Guidrey</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-  <header>
-    <h1>Cole Guidrey</h1>
-  </header>
+  <div class="site-title"><a href="index.html">Cole Guidrey</a></div>
+  <nav>
+    <a href="index.html">home</a>
+    <a href="about.html" class="active">about</a>
+    <a href="writings.html">writings</a>
+    <a href="chess.html">chess</a>
+    <a href="resume.html">resume</a>
+  </nav>
 
-  <div class="container">
-    <nav>
-      <ol>
-        <li><a href="index.html">home</a></li>
-        <li><a href="about.html" class="active">about</a></li>
-        <li><a href="writings.html">writings</a></li>
-        <li><a href="portfolio.html">portfolio</a></li>
-        <li><a href="chess.html">chess</a></li>
-        <li><a href="resume.html">resume</a></li>
-      </ol>
-    </nav>
-
-    <main>
-      <h2>About Me</h2>
-
-      <div class="about-header">
-        <img src="square%20pic.png" alt="Cole Guidrey" class="headshot" />
-        <div class="card">
-          <p>
-            I am a senior studying economics at the University of Pittsburgh.
-          </p>
-          <p>
-            I enjoy playing tennis, and sometimes enjoy golf. I appreciate the arts and attempt my own.
-          </p>
-        </div>
-      </div>
-
-      <div class="section">
-        <h3 class="section-title">Interests</h3>
-        <ul>
-          <li>Economics and financial markets</li>
-          <li>Tennis and golf</li>
-          <li>Chess strategy and competition</li>
-          <li>Creative writing and essays</li>
-          <li>Art and design</li>
-        </ul>
-      </div>
-    </main>
+  <div class="clearfix">
+    <img src="square%20pic.png" alt="Cole Guidrey" class="headshot" />
+    <p>I am a senior studying economics at the University of Pittsburgh.</p>
+    <p>I enjoy playing tennis, and sometimes enjoy golf. I appreciate the arts and attempt my own.</p>
   </div>
+
+  <h2>Interests</h2>
+  <ul>
+    <li>Economics and financial markets</li>
+    <li>Tennis and golf</li>
+    <li>Chess</li>
+    <li>Writing and essays</li>
+    <li>Art and design</li>
+  </ul>
 
   <script src="script.js"></script>
 </body>
