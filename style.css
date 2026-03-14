@@ -48,6 +48,7 @@ h2 {
   border-bottom: 1px solid #ccc;
   padding-bottom: 0.2rem;
   margin: 2.5rem 0 0.75rem;
+  clear: both;
 }
 
 h3 {
@@ -74,6 +75,30 @@ blockquote, .quote {
 
 .muted { color: #666; }
 .small { font-size: 0.875rem; }
+
+/* Compact chess card (top-right float) */
+.chess-card--compact {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  padding: 0.4rem 0.6rem;
+  margin: 0 0 0.75rem 1.25rem;
+  line-height: 1;
+}
+
+.chess-card--compact .chess-rating-num { font-size: 1.1rem; }
+
+/* Essay card */
+.essay-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  padding: 0.25rem 0.25rem;
+  margin: 0.75rem 0 1rem;
+}
 
 /* Essay list */
 .essay-list {
