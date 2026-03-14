@@ -330,6 +330,22 @@ a:hover {
   }
 }
 
+/* Essay footnotes */
+.essay-notes {
+  list-style: decimal;
+  padding-left: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+}
+
+.essay-notes a {
+  color: var(--secondary-text);
+  font-size: 0.8rem;
+}
+
 /* Utilities */
 .text-secondary {
   color: var(--secondary-text);
