@@ -52,12 +52,15 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Highlight active navigation link
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const parts = window.location.pathname.split('/');
+  const currentPage = parts.pop() || 'index.html';
+  const inEssays = parts[parts.length - 1] === 'essays';
   const navLinks = document.querySelectorAll('nav a');
 
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPage) {
+    const hrefPage = href.split('/').pop();
+    if (hrefPage === currentPage || (inEssays && hrefPage === 'writings.html')) {
       link.classList.add('active');
     }
   });
