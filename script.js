@@ -22,6 +22,13 @@ document.addEventListener('DOMContentLoaded', function() {
           const marker = document.getElementById('meter-marker');
           const label = document.getElementById('meter-marker-label');
 
+          const tierEl = document.getElementById('rating-tier');
+          if (tierEl && rapidRating >= 400 && rapidRating <= 1000) {
+            tierEl.textContent = 'Gentleman';
+            tierEl.style.color = '#2e7d32';
+            tierEl.style.fontWeight = 'bold';
+          }
+
           if (meter && marker && label) {
             meter.style.display = 'block';
             label.textContent = rapidRating;
