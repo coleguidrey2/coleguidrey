@@ -20,41 +20,42 @@
   <p>Economics student at the University of Pittsburgh.</p>
 
   <h2>Essays</h2>
-  <ul>
-    <li><a href="essays/Games.html">Good Games</a> <span class="muted small">— Mar 2026</span></li>
-    <li><a href="essays/tesla.html">Tesla</a></li>
+  <ul class="essay-list">
+    <li><a href="essays/Games.html">Good Games <span class="essay-meta">Mar 2026</span></a></li>
+    <li><a href="essays/tesla.html">Tesla <span class="essay-meta"></span></a></li>
   </ul>
 
   <h2>Chess</h2>
-  <p>
-    Rapid: <strong><span id="rapid-rating">Loading...</span></strong>
-    &nbsp;·&nbsp;
-    <a href="https://www.chess.com/member/coleguidrey" target="_blank" rel="noopener">@coleguidrey</a>
-    &nbsp;<span id="rating-tier"></span>
-  </p>
-
-  <div id="rating-meter" style="display:none">
-    <div class="meter-bar-wrapper">
-      <div class="meter-marker" id="meter-marker">
-        <div class="meter-marker-label" id="meter-marker-label"></div>
-        <div class="meter-marker-line"></div>
-        <div class="meter-marker-arrow"></div>
+  <div class="chess-card">
+    <div class="chess-card-header">
+      <div class="chess-card-left">
+        <span class="chess-rating-num" id="rapid-rating">—</span>
+        <span class="chess-rating-label">Rapid</span>
+        <span id="rating-tier" class="chess-tier-badge"></span>
+      </div>
+      <a href="https://www.chess.com/member/coleguidrey" target="_blank" rel="noopener" class="chess-profile-link">@coleguidrey ↗</a>
+    </div>
+    <div id="rating-meter" style="display:none">
+      <div class="meter-bar-wrapper">
+        <div class="meter-marker" id="meter-marker">
+          <div class="meter-marker-label" id="meter-marker-label"></div>
+          <div class="meter-marker-line"></div>
+        </div>
+      </div>
+      <div class="meter-ticks">
+        <span style="left:0%">400</span>
+        <span style="left:20%">800</span>
+        <span style="left:40%">1200</span>
+        <span style="left:60%">1600</span>
+        <span style="left:80%">2000</span>
+        <span style="left:100%">2400</span>
+      </div>
+      <div class="meter-tiers">
+        <span style="left:0%;width:30%">Gentleman</span>
+        <span style="left:30%;width:70%">Wasted Life</span>
       </div>
     </div>
-    <div class="meter-ticks">
-      <span style="left:0%">400</span>
-      <span style="left:20%">800</span>
-      <span style="left:40%">1200</span>
-      <span style="left:60%">1600</span>
-      <span style="left:80%">2000</span>
-      <span style="left:100%">2400</span>
-    </div>
-    <div class="meter-tiers">
-      <span style="left:0%;width:30%">Gentleman</span>
-      <span style="left:30%;width:70%">Wasted Life</span>
-    </div>
   </div>
-
   <p class="small muted">"The ability to play chess is the sign of a gentleman. The ability to play chess well is the sign of a wasted life." — Paul Morphy</p>
 
   <h2>Resume</h2>
