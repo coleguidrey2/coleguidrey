@@ -14,8 +14,29 @@ document.addEventListener('DOMContentLoaded', function() {
         return response.json();
       })
       .then(data => {
-        const rapidRating = data.chess_rapid?.last?.rating || 'N/A';
-        ratingElement.textContent = rapidRating;
+        const rapidRating = data.chess_rapid?.last?.rating;
+        ratingElement.textContent = rapidRating || 'N/A';
+
+        if (rapidRating) {
+          const meter = document.getElementById('rating-meter');
+          const marker = document.getElementById('meter-marker');
+          const label = document.getElementById('meter-marker-label');
+
+          if (meter && marker && label) {
+            meter.style.display = 'block';
+            label.textContent = rapidRating;
+
+            const MIN = 400, MAX = 2400;
+            const pct = Math.min(100, Math.max(0, (rapidRating - MIN) / (MAX - MIN) * 100));
+
+            // Defer so CSS transition fires after element is visible
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                marker.style.left = pct + '%';
+              });
+            });
+          }
+        }
       })
       .catch(error => {
         console.error('Error fetching Chess.com data:', error);

@@ -330,6 +330,96 @@ a:hover {
   }
 }
 
+/* Rating meter */
+.rating-meter {
+  margin-top: var(--spacing-lg);
+  user-select: none;
+}
+
+.meter-bar-wrapper {
+  position: relative;
+  height: 20px;
+  margin-bottom: 28px;
+}
+
+.meter-bar {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: linear-gradient(
+    to right,
+    #d4e8d4 0%,
+    #8fbc8f 20%,
+    #4a9e6b 40%,
+    #2d5a3d 65%,
+    #1a3524 100%
+  );
+}
+
+.meter-marker {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: left 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.meter-marker-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-text);
+  white-space: nowrap;
+  margin-bottom: 2px;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+.meter-marker-line {
+  width: 2px;
+  height: 20px;
+  background: var(--primary-text);
+  border-radius: 1px;
+}
+
+.meter-marker-arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--primary-text);
+}
+
+.meter-ticks {
+  position: relative;
+  height: 16px;
+  margin-bottom: 4px;
+}
+
+.meter-ticks span {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: var(--secondary-text);
+}
+
+.meter-tiers {
+  position: relative;
+  height: 18px;
+}
+
+.meter-tiers span {
+  position: absolute;
+  font-size: 0.65rem;
+  color: var(--secondary-text);
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 /* Essay footnotes */
 .essay-notes {
   list-style: decimal;
