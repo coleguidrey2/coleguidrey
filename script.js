@@ -1,3 +1,27 @@
+// Load nav component
+(function() {
+  fetch('nav.html')
+    .then(r => r.text())
+    .then(html => {
+      const placeholder = document.getElementById('nav-placeholder');
+      if (placeholder) placeholder.outerHTML = html;
+      highlightNav();
+    });
+})();
+
+function highlightNav() {
+  const parts = window.location.pathname.split('/');
+  const currentPage = parts.pop() || 'index.html';
+  const inEssays = parts[parts.length - 1] === 'essays';
+  document.querySelectorAll('nav a').forEach(link => {
+    const hrefPage = link.getAttribute('href').split('/').pop();
+    if (hrefPage === currentPage || (inEssays && hrefPage === 'writings.html')) {
+      link.classList.add('active');
+    }
+  });
+}
+
+
 // Chess.com API integration
 document.addEventListener('DOMContentLoaded', function() {
   const ratingElement = document.getElementById('rapid-rating');
@@ -51,17 +75,4 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-  // Highlight active navigation link
-  const parts = window.location.pathname.split('/');
-  const currentPage = parts.pop() || 'index.html';
-  const inEssays = parts[parts.length - 1] === 'essays';
-  const navLinks = document.querySelectorAll('nav a');
-
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    const hrefPage = href.split('/').pop();
-    if (hrefPage === currentPage || (inEssays && hrefPage === 'writings.html')) {
-      link.classList.add('active');
-    }
-  });
 });
