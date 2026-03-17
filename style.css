@@ -300,6 +300,22 @@ sup a:hover { text-decoration: underline; }
 
 .clearfix::after { content: ''; display: table; clear: both; }
 
+/* Contact footer */
+.contact {
+  margin-top: 3rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.875rem;
+}
+
+.contact a {
+  color: #666;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.contact a:hover { color: #111; text-decoration: underline; }
+
 @media (max-width: 480px) {
   body { padding: 1.5rem 1rem 3rem; }
 }

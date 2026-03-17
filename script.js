@@ -1,11 +1,21 @@
-// Load nav component
+// Load nav and contact components
 (function() {
-  fetch('nav.html')
+  const isSubdir = window.location.pathname.split('/').slice(0, -1).pop() === 'essays';
+  const base = isSubdir ? '../' : '';
+
+  fetch(base + 'nav.html')
     .then(r => r.text())
     .then(html => {
       const placeholder = document.getElementById('nav-placeholder');
       if (placeholder) placeholder.outerHTML = html;
       highlightNav();
+    });
+
+  fetch(base + 'contact.html')
+    .then(r => r.text())
+    .then(html => {
+      const placeholder = document.getElementById('contact-placeholder');
+      if (placeholder) placeholder.outerHTML = html;
     });
 })();
 
