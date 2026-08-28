@@ -2,25 +2,16 @@
 
 ## Run locally
 
-Requires Node.js 18 or newer.
+The dashboard is a static page and requires no build step. From this directory, run any local web server, for example:
 
 ```bash
-npm install
-npm run dev
+python3 -m http.server 4173
 ```
 
-Then open the local URL shown by Vite.
+Then open `http://localhost:4173` in a browser. The page must be served over HTTP so the browser can fetch the data files.
 
-## Build for a personal website
+## Data
 
-```bash
-npm run build
-```
+The dashboard loads the frozen compressed dataset `public/master.csv.gz` and neighborhood boundaries from `public/neighborhoods.geojson`. Keep both files in the public assets when deploying. The compressed CSV is about 5 MB instead of about 48 MB uncompressed, making it suitable for GitHub Pages.
 
-Upload the contents of the generated `dist/` folder to your web host.
-
-The dashboard loads the frozen compressed dataset `public/master.csv.gz` automatically. Keep that file in the public assets when deploying. The compressed file is about 5 MB instead of about 48 MB uncompressed, making it suitable for GitHub Pages.
-
-## Notes
-
-The app is based on `LVTDashboard-3.jsx` and includes the supplied `master-2.csv` data renamed to `master.csv` for the app's automatic loader.
+The interface summarizes property records by neighborhood, maps the selected metric, and exposes neighborhood-level details for exploration. Values are not official tax assessments.

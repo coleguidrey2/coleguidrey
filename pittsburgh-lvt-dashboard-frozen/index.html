@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Pittsburgh Land Value Tax Dashboard">
 	<title>Pittsburgh Land Value Tax Dashboard</title>
+	<link rel="stylesheet" href="dashboard.css">
 	<style>
 		* { box-sizing: border-box; }
 		body {
@@ -27,21 +28,42 @@
 	</style>
 </head>
 <body>
-	<a class="back-link" href="../index.html">&larr; Cole Guidrey</a>
-	<main>
-		<h1>Pittsburgh Land Value Tax Dashboard</h1>
-		<p>Exploring Pittsburgh property data and the potential effects of a land value tax through neighborhood-level analysis.</p>
-
-		<div class="status">
-			<p><strong>Status:</strong> In development</p>
-			<p class="muted">The interactive dashboard is being rebuilt from the frozen research dataset.</p>
+	<header class="topbar">
+		<div>
+			<a class="back-link" href="../index.html">&larr; Cole Guidrey</a>
+			<p class="eyebrow">Urban economics / Pittsburgh</p>
+			<h1>Land Value Tax Dashboard</h1>
+			<p class="lede">A neighborhood-level view of property values, vacancy, and estimated land value tax rates.</p>
 		</div>
+		<div class="status"><span class="status-dot"></span> Research preview</div>
+	</header>
 
-		<h2>Project Data</h2>
-		<ul>
-			<li><a href="public/neighborhoods.geojson">Pittsburgh neighborhoods GeoJSON</a></li>
-			<li><a href="public/master.csv.gz">Property dataset (compressed CSV)</a></li>
-		</ul>
+	<main>
+		<section class="controls" aria-label="Dashboard controls">
+			<label>Search neighborhoods<input id="search" type="search" placeholder="Try Point Breeze"></label>
+			<label>Map metric<select id="metric"><option value="tau">Estimated LVT rate</option><option value="land">Average land value</option><option value="total">Average total value</option></select></label>
+			<button id="reset" type="button">Reset view</button>
+		</section>
+
+		<section class="stats" aria-label="Dataset summary">
+			<div><span class="stat-label">Properties</span><strong id="property-count">Loading</strong></div>
+			<div><span class="stat-label">Neighborhoods</span><strong id="neighborhood-count">Loading</strong></div>
+			<div><span class="stat-label">Median land value</span><strong id="land-median">Loading</strong></div>
+			<div><span class="stat-label">Median estimated rate</span><strong id="rate-median">Loading</strong></div>
+		</section>
+
+		<section class="dashboard-grid">
+			<div class="map-panel">
+				<div class="panel-heading"><div><span class="eyebrow">Spatial view</span><h2>Neighborhoods</h2></div><span id="map-note" class="muted">Loading data...</span></div>
+				<div id="map" class="map" role="img" aria-label="Map of Pittsburgh neighborhoods"></div>
+				<div class="legend"><span id="legend-low">Low</span><span class="legend-gradient"></span><span id="legend-high">High</span></div>
+			</div>
+			<aside class="detail-panel"><span class="eyebrow">Selected neighborhood</span><h2 id="selected-name">Choose a neighborhood</h2><p id="selected-note" class="muted">Select a shape on the map or a row below.</p><dl class="detail-list"><div><dt>Properties</dt><dd id="selected-properties">-</dd></div><div><dt>Average land value</dt><dd id="selected-land">-</dd></div><div><dt>Average total value</dt><dd id="selected-total">-</dd></div><div><dt>Estimated LVT rate</dt><dd id="selected-rate">-</dd></div><div><dt>Vacant properties</dt><dd id="selected-vacant">-</dd></div></dl></aside>
+		</section>
+
+		<section class="table-panel"><div class="panel-heading"><div><span class="eyebrow">Comparison</span><h2>Neighborhood snapshot</h2></div><span id="table-note" class="muted"></span></div><div class="table-wrap"><table><thead><tr><th>Neighborhood</th><th>Properties</th><th>Avg. land value</th><th>Avg. total value</th><th>Est. LVT rate</th><th>Vacant</th></tr></thead><tbody id="results"></tbody></table></div></section>
+		<p class="footnote">Source: frozen property dataset and neighborhood boundaries included with this project. Values summarize available records and are intended for exploration, not assessment.</p>
 	</main>
+	<script src="dashboard.js"></script>
 </body>
 </html>
