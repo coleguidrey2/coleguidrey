@@ -76,6 +76,28 @@ blockquote, .quote {
 .muted { color: #666; }
 .small { font-size: 0.875rem; }
 
+.project-card {
+  border-left: 2px solid #ccc;
+  padding-left: 1rem;
+  margin: 0.75rem 0 1rem;
+}
+
+.project-card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.project-card h4 a {
+  color: #111;
+}
+
+.project-card p { margin-bottom: 0.5rem; }
+
+.project-meta {
+  color: #666;
+  font-size: 0.875rem;
+}
+
 /* Compact chess card (top-right float) */
 .chess-card--compact {
   float: right;
