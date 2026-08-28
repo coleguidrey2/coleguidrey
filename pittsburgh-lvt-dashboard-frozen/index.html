@@ -1,1 +1,47 @@
-<div id="root"></div><script type="module" src="/src/main.jsx"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Pittsburgh Land Value Tax Dashboard">
+	<title>Pittsburgh Land Value Tax Dashboard</title>
+	<style>
+		* { box-sizing: border-box; }
+		body {
+			max-width: 720px;
+			margin: 0 auto;
+			padding: 2.5rem 1.5rem 4rem;
+			color: #111;
+			background: #fff;
+			font: 16px/1.65 Georgia, serif;
+		}
+		a { color: #00c; }
+		h1 { max-width: 15ch; font-size: 2rem; line-height: 1.15; margin: 0 0 0.75rem; }
+		h2 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 1px solid #ccc; padding-bottom: 0.2rem; margin: 2.5rem 0 0.75rem; }
+		p { margin: 0 0 1rem; }
+		.back-link { color: #666; font-size: 0.875rem; }
+		.status { border-left: 2px solid #ccc; padding-left: 1rem; margin: 1.5rem 0; }
+		.muted { color: #666; font-size: 0.875rem; }
+		ul { padding-left: 1.3rem; }
+		li { margin-bottom: 0.35rem; }
+	</style>
+</head>
+<body>
+	<a class="back-link" href="../index.html">&larr; Cole Guidrey</a>
+	<main>
+		<h1>Pittsburgh Land Value Tax Dashboard</h1>
+		<p>Exploring Pittsburgh property data and the potential effects of a land value tax through neighborhood-level analysis.</p>
+
+		<div class="status">
+			<p><strong>Status:</strong> In development</p>
+			<p class="muted">The interactive dashboard is being rebuilt from the frozen research dataset.</p>
+		</div>
+
+		<h2>Project Data</h2>
+		<ul>
+			<li><a href="public/neighborhoods.geojson">Pittsburgh neighborhoods GeoJSON</a></li>
+			<li><a href="public/master.csv.gz">Property dataset (compressed CSV)</a></li>
+		</ul>
+	</main>
+</body>
+</html>
